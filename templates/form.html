@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="/estimate" method="post">
+  <h1> {{ title }} </h1>
+  <div class="info">
+    <input class="fname" type="text" name="carlength" placeholder="Longueur du véhicule">
+    <input type="text" name="carwidth" placeholder="Largeur du véhicule">
+    <input type="text" name="cylindernumber" placeholder="Nombre de cylindres">
+    <input type="text" name="curbweight" placeholder="Poid à vide du véhicule">
+    <input type="text" name="compressionratio" placeholder="Ratio de compression du véhicule">
+    <input type="text" name="horsepower" placeholder="Puissance moteur du véhicule">
+    <input type="text" name="highwaympg" placeholder="Consomation">
+  <button type="submit">Estimer le véhicule</button>
+</form>
+{% endblock %}
