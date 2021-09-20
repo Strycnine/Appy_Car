@@ -4,3 +4,5 @@ sklearn
 joblib
 statsmodels
 gunicorn
+beautifulsoup4
+urllib3

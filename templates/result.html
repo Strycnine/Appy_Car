@@ -2,8 +2,12 @@
 
 {% block content %}
 <form action="#" method="post">
-  <h1> {{ title }} </h1>
+  <div class="title">
+    <h1> {{ title }} </h1>
+    <a class="home" href="/"><i class="fas fa-reply" style="font-size:35px;color:#1c87c9"></i></a>
+  </div>
   <div class="info">
-  <h2> {{ price }}  $ </h2>
+    <h2> {{ price.price }} {{ price.unit }} </h2>
+  </div>
 </form>
 {% endblock %}

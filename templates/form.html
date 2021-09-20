@@ -1,16 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<form action="/estimate" method="post">
-  <h1> {{ title }} </h1>
+<form action="/estim" method="post">
+  <div class="title">
+    <h1> {{ title }} </h1>
+    <!-- <a class="home" href="/"><i class="fas fa-reply" style="font-size:35px;color:#1c87c9"></i></a> -->
+  </div>
   <div class="info">
-    <input class="fname" type="text" name="carlength" placeholder="Longueur du véhicule">
-    <input type="text" name="carwidth" placeholder="Largeur du véhicule">
-    <input type="text" name="cylindernumber" placeholder="Nombre de cylindres">
-    <input type="text" name="curbweight" placeholder="Poid à vide du véhicule">
-    <input type="text" name="compressionratio" placeholder="Ratio de compression du véhicule">
-    <input type="text" name="horsepower" placeholder="Puissance moteur du véhicule">
-    <input type="text" name="highwaympg" placeholder="Consomation">
-  <button type="submit">Estimer le véhicule</button>
+    <select name="system">
+      <option value="metric">Metric system</option>
+      <option value="imperial">Imperial system</option>
+    </select>
+    <input type="number" min="0" step="0.01" name="carlength" placeholder="Longueur du véhicule (cm - inch)" required>
+    <input type="number" min="0" step="0.01" name="carwidth" placeholder="Largeur du véhicule (cm - inch)" required>
+    <input type="number" min="1" max="16" name="cylindernumber" placeholder="Nombre de cylindres" required>
+    <input type="number" min="0" name="curbweight" placeholder="Poid à vide du véhicule (cm - lbs)" required>
+    <input type="number" min="0" name="compressionratio" placeholder="Ratio de compression du véhicule" required>
+    <input type="number" min="0" name="horsepower" placeholder="Puissance moteur du véhicule" required>
+    <input type="number" min="0" step="0.01" name="highwaympg" placeholder="Consomation (l/100km - mpg)" required>
+    <button type="submit">Estimer le véhicule</button>
+  </div>
 </form>
 {% endblock %}
