@@ -78,6 +78,7 @@ def estim():
         data['carwidth'] = conv_long(data['carwidth'])
         data['curbweight'] = conv_poid(data['curbweight'])
         data['highwaympg'] = conv_conso(data['highwaympg'])
+        price['price'] = prediction(data)
         price['price'] = conv_prix(price['price'])
         price['unit'] = '€'
     return render_template('result.html', title=title, price=price, sys=sys)
